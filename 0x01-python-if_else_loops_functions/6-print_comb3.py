@@ -2,8 +2,8 @@
 for x in range(10):
     for y in range(10):
         if x < y:
-            print(str(x) + str(y), end="")
+            print("{}".format(str(x) + str(y)), end="")
             if not (x == 8 and y == 9):
-                print(', ', end="")
+                print("{}".format(', '), end="")
             else:
                 print()
