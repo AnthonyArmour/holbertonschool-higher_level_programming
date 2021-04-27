@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-print('abcdefghijklmnopqrstuvwxyz', end="")
+for n in "abcdefghijklmnopqrstuvwxyz":
+    print(n, end="")
