@@ -9,7 +9,7 @@
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *temp = NULL, *trav = NULL;
-	int sig = 0;
+	int sig = 0, sig2 = 0;
 
 	temp = malloc(sizeof(listint_t));
 	if (!temp)
@@ -31,8 +31,9 @@ listint_t *insert_node(listint_t **head, int number)
 			sig = 1;
 		}
 		trav = trav->next;
+		sig2 = 1;
 	}
-	if (sig == 0)
+	if (sig == 0 || sig2 == 0)
 	{
 		trav->next = temp;
 	}
