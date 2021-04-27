@@ -7,8 +7,8 @@ if number < 0:
 print('is', number % 10, end=" ")
 number = number % 10
 if number > 5:
-    print('and is greater than 5')
+    print("{}".format('and is greater than 5'))
 elif number == 0:
-    print('and is 0')
+    print("{}".format('and is 0'))
 else:
-    print('and is less than 6 and not 0')
+    print("{}".format('and is less than 6 and not 0'))
