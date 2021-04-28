@@ -6,9 +6,9 @@ def print_matrix_integer(matrix=[[]]):
         for n in lst:
             sig = 1
             if x + 1 == len(lst):
-                print("{}".format(n))
+                print("{:d}".format(n))
             else:
-                print("{}".format(n), end=" ")
+                print("{:d}".format(n), end=" ")
             x = x + 1
     if sig == 0:
         print()
