@@ -5,6 +5,7 @@ def search_replace(my_list, search, replace):
     while n < len(my_list):
         if my_list[n] == search:
             nlst.append(int(replace))
-        nlst.append(my_list[n])
+        else:
+            nlst.append(my_list[n])
         n = n + 1
     return nlst
