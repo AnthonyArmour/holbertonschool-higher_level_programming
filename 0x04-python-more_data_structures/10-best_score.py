@@ -5,7 +5,7 @@ def best_score(a_dictionary):
     name = None
     if a_dictionary:
         for k, v in a_dictionary.items():
-            if num == None or v > num:
+            if num is None or v > num:
                 num = v
                 name = k
         return name
