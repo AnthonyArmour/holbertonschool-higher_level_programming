@@ -19,7 +19,8 @@ def roman_to_int(roman_string):
             return int(d[rstr])
         else:
             return 0
-    while x < len(rstr) - 1:
+    lp = len(rstr) - 1
+    while x < lp:
         st = rstr[x] + rstr[x + 1]
         if st in d.keys():
             tot = tot + d[st]
@@ -30,6 +31,6 @@ def roman_to_int(roman_string):
             x = x + 1
         else:
             return 0
-    if rstr[len(rstr) - 1] in d.keys():
-        tot = tot + d[rstr[len(rstr) - 1]]
+    if st not in d.keys() and st[1] in d.keys():
+        tot = tot + d[st[1]]
     return tot
