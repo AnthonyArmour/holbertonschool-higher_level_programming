@@ -1,0 +1,1 @@
+/This is a project about try: and except: in python
