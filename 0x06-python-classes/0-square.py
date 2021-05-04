@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-class Square:
-    """Square is a class that has 3 methods"""
+"""Define Class for square"""
 
+
+class Square:
+    """setting up class for square"""
     def __init__(self):
         """This is init method."""
-
-
         pass
