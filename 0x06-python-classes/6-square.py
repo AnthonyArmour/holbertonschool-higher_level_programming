@@ -47,12 +47,13 @@ class Square:
 
     def my_print(self):
         """prints square of #'s size of size squared"""
-        if self.__size == 0:
-            print()
-        else:
+        if self.__size > 0:
+            print("{}".format('\n' * self.__position[1]), end='')
             for i in range(self.__size):
                 for t in range(self.__position[0]):
                     print("{}".format(" "), end="")
                 for n in range(self.__size):
                     print("{}".format("#"), end="")
                 print()
+        else:
+            print()
