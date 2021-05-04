@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""Square has private variable size"""
+
+
 class Square:
+    """Square size init to 0 if type is int, else raise error"""
     def __init__(self, size=0):
         if type(size) is not int:
             raise TypeError("size must be an integer")
