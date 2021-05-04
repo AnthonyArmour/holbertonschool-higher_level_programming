@@ -5,6 +5,8 @@
 class Node:
     """Node defines the data type"""
     def __init__(self, data, next_node=None):
+        if type(data) is not int:
+            raise TypeError("data must be an integer")
         self.__data = data
         self.__next_node = next_node
 
