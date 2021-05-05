@@ -70,8 +70,6 @@ class Square:
                 for n in range(self.__size):
                     st = st + "#"
                 st = st + "\n"
-        else:
-            return "\n"
         nst = st[:len(st) - 1]
         return nst
 
@@ -87,7 +85,5 @@ class Square:
                 for n in range(self.__size):
                     st = st + "#"
                 st = st + "\n"
-        else:
-            return "\n"
         nst = st[:len(st) - 1]
         return nst
