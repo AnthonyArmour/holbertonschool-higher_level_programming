@@ -26,7 +26,7 @@ ValueError: size must be >= 0
 Traceback (most recent call last):
 		  ...
 TypeError:
->>> print_square("blah") # doctest: +IGNORE_EXCEPTION_DETAIL
+>>> print_square("blah")
 Traceback (most recent call last):
 		  ...
-TypeError:
+TypeError: size must be an integer
