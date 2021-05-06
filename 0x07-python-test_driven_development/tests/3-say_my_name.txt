@@ -9,8 +9,10 @@ My name is Bob
 Traceback (most recent call last):
 		  ...
 TypeError: first_name must be a string
->>> say_my_name()
-<BLANKLINE>
+>>> say_my_name() # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+		  ...
+TypeError:
 >>> say_my_name("bob", 2)
 Traceback (most recent call last):
 		  ...
