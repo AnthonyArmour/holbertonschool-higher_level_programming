@@ -26,3 +26,5 @@ TypeError: a must be an integer
 >>> print(add_integer()) # doctest: +IGNORE_EXCEPTION_DETAIL
 Traceback (most recent call last):
 TypeError:
+>>> print(add_integer(0, float(inf))) # doctest: +IGNORE_EXCEPTION_DETAIL
+TypeError:
