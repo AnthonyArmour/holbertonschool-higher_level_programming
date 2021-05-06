@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+matrix_divided returns a matrix divided by div
+"""
+
+
 def matrix_divided(matrix, div):
     """divides every element of matrix by div"""
     sq = []
@@ -6,7 +11,7 @@ def matrix_divided(matrix, div):
     em = "matrix must be a matrix (list of lists) of integers/floats"
     ed = "div must be a number"
     es = "Each row of the matrix must have the same size"
-    if type(div) is not int and type(div) is not float:
+    if (type(div) is not int and type(div) is not float) or div is None:
         raise TypeError(ed)
     if div == 0:
         raise ZeroDivisionError("division by zero")
@@ -19,6 +24,8 @@ def matrix_divided(matrix, div):
         if len(lst) != size:
             raise TypeError(es)
         for i in lst:
+            if type(i) is not float and type(i) is not int:
+                raise TypeError(em)
             sq_lst.append(round(i / div, 2))
         sq.append(sq_lst.copy())
         sq_lst.clear()
