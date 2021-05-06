@@ -23,7 +23,6 @@ TypeError: a must be an integer
 Traceback (most recent call last):
           ...
 TypeError: a must be an integer
->>> print(add_integer())
+>>> print(add_integer()) # doctest: +IGNORE_EXCEPTION_DETAIL
 Traceback (most recent call last):
-		  ...
 TypeError:
