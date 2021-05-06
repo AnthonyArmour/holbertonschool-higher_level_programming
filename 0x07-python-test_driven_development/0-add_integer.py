@@ -8,9 +8,9 @@ def add_integer(a, b=98):
     """
     returns a + b
     """
-    if a is None:
+    if a is None or a == float('inf'):
         raise TypeError("a must be an integer")
-    if b is None:
+    if b is None or b == float('inf'):
         raise TypeError("b must be an integer")
     if type(a) is float:
         a = int(a)
