@@ -27,10 +27,10 @@ Sin aliud quid voles, postea.
 Quae animi affectio suum cuique tribuens atque hanc, quam dico.
 <BLANKLINE>
 Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
->>> text_indentation()
+>>> text_indentation() # doctest: +IGNORE_EXCEPTION_DETAIL
 Traceback (most recent call last):
 		  ...
-TypeError: text must be a string
+TypeError:
 >>> text_indentation(5)
 Traceback (most recent call last):
 		  ...
