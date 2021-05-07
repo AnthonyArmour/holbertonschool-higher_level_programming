@@ -22,10 +22,10 @@ def solve_n_queens(queens):
 def solutionQ(board):
     """finds each solution and prints one by one"""
     mlen = len(board)
-    x = 1
+    x = 0
     y = 1
     res = False
-    while x < len(board) - 1:
+    while x < len(board):
         board[x][0] = 1
         res, board = inception(board, y, res)
         if res is not False:
