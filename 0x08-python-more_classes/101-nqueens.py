@@ -2,6 +2,9 @@
 """This program solves the N queens problem"""
 
 
+import sys
+
+
 def solve_n_queens(queens):
     """solves the N Queens problem"""
     if type(queens) is not int:
@@ -16,8 +19,8 @@ def solve_n_queens(queens):
     solutionQ(board)
 
 
-
 def solutionQ(board):
+    """finds each solution and prints one by one"""
     mlen = len(board)
     x = 1
     y = 1
@@ -31,7 +34,9 @@ def solutionQ(board):
         x += 1
         res = False
 
+
 def inception(board, y, res):
+    """checks for an (all safe) combo"""
     xx = 0
     res = False
     if y == len(board):
@@ -48,11 +53,12 @@ def inception(board, y, res):
         xx += 1
     return res, board
 
+
 def check_safe_spot(board, xx, y):
+    """checks if current index is safe from other queens"""
     res = True
     yn = 0
     xn = xx
-
 
     while xn < len(board):
         while yn < y:
@@ -77,7 +83,9 @@ def check_safe_spot(board, xx, y):
         yn -= 1
     return res
 
+
 def print_res(board):
+    """prints the index of all safe queens"""
     x = 0
     y = 0
     lst = list()
@@ -94,6 +102,7 @@ def print_res(board):
         x += 1
     print("{}".format(matrix))
 
+
 def reset_board(board):
     """resets the board"""
     x = 0
@@ -106,4 +115,14 @@ def reset_board(board):
         x += 1
     return board
 
-solve_n_queens(4)
+if len(sys.argv) != 2:
+    print("{}".format("Usage: nqueens N"))
+    exit(1)
+arg = sys.argv[1]
+if not arg.isdigit():
+    print("{}".format("N must be a number"))
+    exit(1)
+if int(arg) < 4:
+    print("{}".format("N must be at least 4"))
+    exit(1)
+solve_n_queens(int(arg))
