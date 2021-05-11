@@ -3,6 +3,7 @@
 
 
 def is_same_class(obj, a_class):
+    """returns true if same clas"""
     if a_class.__name__ == "object":
         return False
     if type(obj) == a_class:
