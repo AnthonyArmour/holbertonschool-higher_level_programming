@@ -26,7 +26,7 @@ class Rectangle(BaseGeometry):
     """rectangle class inherited from BaseGeometry"""
     def __init__(self, width, height):
         """init method"""
-        super(Rectangle, self).__init__()
+        super().__init__()
         try:
             self.integer_validator("width", width)
         except Exception as e:
