@@ -1,0 +1,34 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("my_int", 12)
+True
+>>> bg.integer_validator("name", "John") # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+		  ...
+TypeError:
+>>> bg.integer_validator("name", 0) # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+          ...
+ValueError:
+>>> bg.integer_validator("name", -4) # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+          ...
+ValueError:
+>>> bg.integer_validator("my_int", (12,)) # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+          ...
+TypeError:
+>>> bg.integer_validator("my_int", [3]) # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+          ...
+TypeError:
+>>> bg.integer_validator("my_int", True) # doctest: +IGNORE_EXCEPTION_DETAIL
+True
+>>> bg.integer_validator("my_int", {4, 4}) # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+          ...
+TypeError:
+>>> bg.integer_validator("my_int", None) # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+          ...
+TypeError:
