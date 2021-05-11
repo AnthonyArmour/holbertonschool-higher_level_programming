@@ -20,7 +20,9 @@ class MyList(list):
     def print_sorted(self):
         """returns a sorted list in ascending order"""
         if len(self) < 1:
-            raise TypeError("empty list")
+            lst = []
+            print(lst)
+            return lst
         lst = list()
         for n in self:
             if len(lst) < 1:

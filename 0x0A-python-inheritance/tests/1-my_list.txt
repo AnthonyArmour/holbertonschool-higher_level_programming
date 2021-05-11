@@ -31,6 +31,5 @@ TypeError:
 [-6, 1, 2, 3]
 >>> my_list = MyList()
 >>> my_list.print_sorted() # doctest: +IGNORE_EXCEPTION_DETAIL
-Traceback (most recent call last):
-          ...
-TypeError:
+[]
+[]
