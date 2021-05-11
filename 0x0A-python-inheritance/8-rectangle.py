@@ -4,6 +4,10 @@
 
 class BaseGeometry():
     """class with one empty method"""
+    def __init__(self):
+        """empty init method"""
+        pass
+
     def area(self):
         """empty method"""
         raise Exception("area() is not implemented")
