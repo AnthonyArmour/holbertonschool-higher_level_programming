@@ -8,6 +8,8 @@ x = 0
 size = 0
 d = {
     '200': 0,
+    '301': 0,
+    '400': 0,
     '401': 0,
     '403': 0,
     '404': 0,
@@ -18,6 +20,9 @@ try:
     for line in sys.stdin:
         x += 1
         lst = line.split()
+        if len(lst) < 3:
+            lst.clear()
+            continue
         if lst[-2] in d.keys():
             d[lst[-2]] += 1
             size += int(lst[-1])
