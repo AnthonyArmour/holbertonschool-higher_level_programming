@@ -3,6 +3,7 @@
 
 
 def add_attribute(obj, name, value):
+    """adds attribute to object"""
     if getattr(obj, "__dict__", 5) != 5:
         setattr(obj, name, value)
     else:
