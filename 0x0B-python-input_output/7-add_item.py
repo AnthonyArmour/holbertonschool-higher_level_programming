@@ -12,8 +12,6 @@ if len(argv) == 1:
 else:
     try:
         st = load_from_json_file("add_item.json")
-        print("HERE")
-        print(st)
     except:
         st = list()
     finally:
