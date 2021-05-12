@@ -27,6 +27,10 @@ try:
             for status in sorted(d.keys()):
                 print("{}: {}".format(status, d[status]))
         lst.clear
+    if x < 10:
+        print("File size: {}".format(size))
+        for status in sorted(d.keys()):
+            print("{}: {}".format(status, d[status]))
 except KeyboardInterrupt:
     print("File size: {}".format(size))
     for status in sorted(d.keys()):
