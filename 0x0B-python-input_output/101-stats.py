@@ -25,7 +25,6 @@ try:
             continue
         if lst[-2] in d.keys():
             d[lst[-2]] += 1
-            print(int(lst[-1]))
         try:
             size += int(lst[-1])
         except:
