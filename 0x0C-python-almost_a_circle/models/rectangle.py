@@ -116,8 +116,21 @@ class Rectangle(Base):
                 str(self.__y) + " - " + str(self.__width) + "/" +
                 str(self.__height))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """updates instance"""
+        if len(args) == 0 or args == []:
+            for k, v in kwargs.items():
+                if k == "id":
+                    self.id = int(v)
+                if k == "width":
+                    self.__width = int(v)
+                if k == "height":
+                    self.__height = int(v)
+                if k == "x":
+                    self.__x = int(v)
+                if k == "y":
+                    self.__y = int(v)
+            return
         if len(args) > 0:
             self.id = int(args[0])
         if len(args) > 1:
