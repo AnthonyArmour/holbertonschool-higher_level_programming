@@ -103,9 +103,12 @@ class Rectangle(Base):
 
     def display(self):
         """displays rectangle with #"""
-        print("{}".format("\n" * self.__y))
+        if self.__y > 0:
+            print("{}".format("\n" * self.__y), end="")
         for n in range(self.__height):
-            print("{}{}\n".format(" " * self.__x, "#" * self.__width), end="")
+            if self.__x > 0:
+                print("{}".format(" " * self.__x), end="")
+            print("{}\n".format("#" * self.__width), end="")
 
     def __str__(self):
         """printable params"""
