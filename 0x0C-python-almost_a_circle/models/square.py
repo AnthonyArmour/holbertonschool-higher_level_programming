@@ -32,3 +32,14 @@ class Square(Rectangle):
         """return printablbe instance"""
         return ("[Square] (" + str(self.id) + ") " + str(self.x) + "/" +
                 str(self.y) + " - " + str(self.size))
+
+    def update(self, *args, **kwargs):
+        """updates attruibutes"""
+        if len(args) == 0 or args == []:
+            for k, v in kwargs.items():
+                setattr(self, k, v)
+            return
+        else:
+            lst = ["id", "size", "x", "y"]
+            for n in range(len(args)):
+                setattr(self, lst[n], args[n])
