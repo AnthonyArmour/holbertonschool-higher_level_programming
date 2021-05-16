@@ -100,3 +100,8 @@ class Rectangle(Base):
     def area(self):
         """returns area"""
         return self.__width * self.__height
+
+    def display(self):
+        """displays rectangle with #"""
+        for n in range(self.__height):
+            print("{}\n".format("#" * self.__width), end="")
