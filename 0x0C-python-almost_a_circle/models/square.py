@@ -10,8 +10,25 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """init method for square class"""
         super().__init__(size, size, x, y, id)
+        self.size = size
+
+    @property
+    def size(self):
+        """size getter method"""
+        return self.__width
+
+    @size.setter
+    def size(self, value):
+        """size setter"""
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        elif value <= 0:
+            raise ValueError("width must be > 0")
+        else:
+            self.__width = value
+            self.__height = value
 
     def __str__(self):
         """return printablbe instance"""
         return ("[Square] (" + str(self.id) + ") " + str(self.x) + "/" +
-                str(self.y) + " - " + str(self.width))
+                str(self.y) + " - " + str(self.size))

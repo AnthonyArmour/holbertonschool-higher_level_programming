@@ -120,24 +120,10 @@ class Rectangle(Base):
         """updates instance"""
         if len(args) == 0 or args == []:
             for k, v in kwargs.items():
-                if k == "id":
-                    self.id = int(v)
-                if k == "width":
-                    self.__width = int(v)
-                if k == "height":
-                    self.__height = int(v)
-                if k == "x":
-                    self.__x = int(v)
-                if k == "y":
-                    self.__y = int(v)
+                setattr(self, k, v)
             return
-        if len(args) > 0:
-            self.id = int(args[0])
-        if len(args) > 1:
-            self.__width = int(args[1])
-        if len(args) > 2:
-            self.__height = int(args[2])
-        if len(args) > 3:
-            self.__x = int(args[3])
-        if len(args) > 4:
-            self.__y = int(args[4])
+        x = 0
+        lst = ["id", "width", "height", "x", "y"]
+        for n in range(len(args)):
+            setattr(self, lst[x], int(args[n]))
+            x += 1
