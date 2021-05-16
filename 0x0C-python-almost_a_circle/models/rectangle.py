@@ -105,3 +105,9 @@ class Rectangle(Base):
         """displays rectangle with #"""
         for n in range(self.__height):
             print("{}\n".format("#" * self.__width), end="")
+
+    def __str__(self):
+        """printable params"""
+        return ("[Rectangle] (" + str(self.id) + ") " + str(self.__x) + "/" +
+                str(self.__y) + " - " + str(self.__width) + "/" +
+                str(self.__height))
