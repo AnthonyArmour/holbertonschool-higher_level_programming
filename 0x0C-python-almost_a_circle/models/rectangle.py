@@ -127,3 +127,11 @@ class Rectangle(Base):
         for n in range(len(args)):
             setattr(self, lst[x], int(args[n]))
             x += 1
+
+    def to_dictionary(self):
+        """returns dictionary of attributes"""
+        d = dict()
+        lst = ["id", "width", "height", "x", "y"]
+        for n in lst:
+            d[n] = getattr(self, n)
+        return d

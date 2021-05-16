@@ -43,3 +43,11 @@ class Square(Rectangle):
             lst = ["id", "size", "x", "y"]
             for n in range(len(args)):
                 setattr(self, lst[n], args[n])
+
+    def to_dictionary(self):
+        """returns dictionary of instance attributes"""
+        d = dict()
+        lst = ["id", "size", "x", "y"]
+        for n in lst:
+            d[n] = getattr(self, n)
+        return d
