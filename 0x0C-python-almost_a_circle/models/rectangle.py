@@ -115,3 +115,16 @@ class Rectangle(Base):
         return ("[Rectangle] (" + str(self.id) + ") " + str(self.__x) + "/" +
                 str(self.__y) + " - " + str(self.__width) + "/" +
                 str(self.__height))
+
+    def update(self, *args):
+        """updates instance"""
+        if len(args) > 0:
+            self.id = int(args[0])
+        if len(args) > 1:
+            self.__width = int(args[1])
+        if len(args) > 2:
+            self.__height = int(args[2])
+        if len(args) > 3:
+            self.__x = int(args[3])
+        if len(args) > 4:
+            self.__y = int(args[4])
