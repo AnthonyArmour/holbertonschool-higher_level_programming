@@ -26,9 +26,7 @@ class Base():
     @classmethod
     def save_to_file(cls, list_objs):
         """writes json string to a file"""
-        lst = str(cls).split("'")
-        lst2 = lst[1].split(".")
-        json_file = lst2[-1][:] + ".json"
+        json_file = cls.__name__ + ".json"
         objs = list()
         d = dict()
         if list_objs:
@@ -69,3 +67,19 @@ class Base():
             instance = cls(1, 1)
         instance.update(**dictionary)
         return instance
+
+    @classmethod
+    def load_from_file(cls):
+        """returns list of created instances"""
+        json_file = cls.__name__ + ".json"
+        instances = list()
+        try:
+            with open(json_file, "r") as fh:
+                text = fh.read()
+                objs = Base.from_json_string(text)
+                for d in objs:
+                    temp = cls.create(**d)
+                    instances.append(temp)
+            return instances
+        except:
+            return list()
