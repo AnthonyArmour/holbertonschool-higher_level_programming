@@ -54,7 +54,6 @@ class Base():
         while n < len(json_string) - 1:
             st = st + json_string[n]
             if json_string[n] == "}":
-                st = "[" + st + "]"
                 lst.append(json.loads(st))
                 st = ""
                 n += 2
