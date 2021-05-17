@@ -59,3 +59,13 @@ class Base():
                 n += 2
             n += 1
         return lst
+
+    @classmethod
+    def create(cls, **dictionary):
+        """creates instance"""
+        if "size" in dictionary.keys():
+            instance = cls(1)
+        if "height" in dictionary.keys():
+            instance = cls(1, 1)
+        instance.update(**dictionary)
+        return instance
