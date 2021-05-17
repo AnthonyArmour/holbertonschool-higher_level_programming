@@ -31,10 +31,14 @@ class Base():
         json_file = lst2[-1][:] + ".json"
         objs = list()
         d = dict()
-        for item in list_objs:
-            d = item.to_dictionary()
-            objs.append(dict(d))
-            d.clear()
-        with open(json_file, "w") as fh:
+        if list_objs:
+            for item in list_objs:
+                d = item.to_dictionary()
+                objs.append(dict(d))
+                d.clear()
+        with open(json_file, "w+") as fh:
+            if list_objs is None:
+                fh.write("[]")
+                return
             dump = Base.to_json_string(objs)
             fh.write(dump)
