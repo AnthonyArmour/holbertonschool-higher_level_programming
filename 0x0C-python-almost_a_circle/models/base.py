@@ -36,4 +36,5 @@ class Base():
             objs.append(dict(d))
             d.clear()
         with open(json_file, "w") as fh:
-            json.dump(objs, fh)
+            dump = Base.to_json_string(objs)
+            fh.write(dump)
