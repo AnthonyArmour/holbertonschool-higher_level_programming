@@ -42,3 +42,21 @@ class Base():
                 return
             dump = Base.to_json_string(objs)
             fh.write(dump)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns json list from json string"""
+        if not json_string or json_string == []:
+            return list()
+        st = ""
+        lst = list()
+        n = 1
+        while n < len(json_string) - 1:
+            st = st + json_string[n]
+            if json_string[n] == "}":
+                st = "[" + st + "]"
+                lst.append(json.loads(st))
+                st = ""
+                n += 2
+            n += 1
+        return lst
