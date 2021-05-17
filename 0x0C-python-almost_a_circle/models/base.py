@@ -2,6 +2,7 @@
 """this is the base class"""
 
 import json
+import csv
 
 
 class Base():
@@ -81,5 +82,44 @@ class Base():
                     temp = cls.create(**d)
                     instances.append(temp)
             return instances
+        except:
+            return list()
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """saves csv formatted obj to file"""
+        csv_file = cls.__name__ + ".csv"
+        if cls.__name__ == "Rectangle":
+            field = ['id', 'width', 'height', 'x', 'y']
+        else:
+            field = ['id', 'size', 'x', 'y']
+        lst = list()
+        with open(csv_file, "w") as fh:
+            if list_objs:
+                writer = csv.DictWriter(fh, fieldnames=field)
+                writer.writeheader()
+                for items in list_objs:
+                    d = items.to_dictionary()
+                    lst.append(dict(d))
+                    d.clear()
+                writer.writerows(lst)
+            else:
+                fh.write("")
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """loads from csv file"""
+        csv_file = cls.__name__ + ".csv"
+        lst = list()
+        try:
+            with open(csv_file, "r") as fh:
+                reader = csv.DictReader(fh)
+                res = list(reader)
+                for d in res:
+                    for item in d.keys():
+                        d[item] = int(d[item])
+                    temp = cls.create(**d)
+                    lst.append(temp)
+            return lst
         except:
             return list()
