@@ -8,9 +8,9 @@ if __name__ == "__main__":
     db = MySQLdb.connect("localhost", argv[1], argv[2], argv[3],)
     with db.cursor() as cursor:
         cursor.execute("""
-            SELECT 
-                * 
-            FROM 
+            SELECT
+                *
+            FROM
                 states
             WHERE
                 name = BINARY %(name)s
