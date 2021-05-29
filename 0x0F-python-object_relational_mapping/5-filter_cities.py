@@ -22,6 +22,8 @@ if __name__ == "__main__":
                 'name': argv[4]
             })
         data = cursor.fetchall()
+    if len(data) == 0:
+        print()
     for x in range(len(data)):
         if x != len(data) - 1:
             print("{}, ".format(data[x][0]), end="")
