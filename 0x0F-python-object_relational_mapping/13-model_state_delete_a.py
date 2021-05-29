@@ -17,4 +17,4 @@ if __name__ == "__main__":
     for state in states:
         if "a" in state:
             session.delete(state)
-            session.commit()
+    session.commit()
