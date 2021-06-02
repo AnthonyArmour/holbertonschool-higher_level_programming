@@ -1,5 +1,5 @@
 #!/usr/bin/node
-/* prints array in for loop */
+/* prints array in forr loop */
 
 const myarr = [
   'C is fun',
