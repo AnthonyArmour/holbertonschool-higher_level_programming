@@ -2,10 +2,9 @@
 /* converts from base 10 to specified base */
 
 exports.converter = function (base) {
-  const b = base;
   return function (st) {
-    console.log(b);
+    console.log(base);
     const ret = parseInt(st.toString(10));
-    return ret.toString(b);
+    return ret.toString(base);
   };
 };
